@@ -566,8 +566,8 @@ class SpaceLargeScaleEroder(Component):
             self._sed_erosion_term,
             self._br_erosion_term,
             K_sed_vector,
-            ero_sed_effective,
-            depo_effective,
+            #ero_sed_effective,
+            #depo_effective,
             self._v_s,
             self._phi,
             self._F_f,
@@ -575,6 +575,7 @@ class SpaceLargeScaleEroder(Component):
             dt,
             self._thickness_lim,
         )
+
 
         V_leaving_riv = np.sum(self.sediment_influx[self.grid.boundary_nodes]) * dt
         # Update topography

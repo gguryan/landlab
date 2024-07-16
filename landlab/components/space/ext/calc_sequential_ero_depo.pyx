@@ -122,8 +122,10 @@ def _sequential_ero_depo(
         # Update deposition rate based on adjusted fluxes
         Hd = H_loc - H_Before
         depo_effective[node_id] = (v*qs_out_adj/q[node_id])/(1 - phi)
+        
         # Deposition should be larger or equal to increase in soil depth
         depo_effective[node_id] = max(depo_effective[node_id], Hd/dt)
+        
         ero_sed_effective[node_id] = depo_effective[node_id] - Hd/dt
     
     return vol_SSY_riv
